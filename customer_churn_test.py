@@ -2,6 +2,9 @@ from customer_churn_training import *
 import shap
 import matplotlib.pyplot as plt
 import plotly.express as px
+from io import BytesIO
+
+import requests
 
 
 def display_feature_insights(model, X_test, feature_names):
@@ -61,8 +64,8 @@ if __name__ == "__main__":
     # st.title("Churn Prediction Dashboard")
     data = load_data()
     X_train, X_test, y_train, y_test, feature_names = process_data(data)
-    # log_reg = joblib.load("https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl")
-    log_reg = joblib.load('https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl#:~:text=customer_churn_model.pkl')
+    url = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
+    log_reg = joblib.load(BytesIO(requests.get(URI).content))
 
     col1, col2 = st.columns([1,2])  # Left, Center, Right
 
