@@ -13,7 +13,7 @@ import joblib
 
 # @st.cache_data
 def load_data():
-    path = 'WA_Fn-UseC_-Telco-Customer-Churn.csv'
+    path = 'https://raw.githubusercontent.com/archanags001/CustomerChurnPredictor/refs/heads/main/WA_Fn-UseC_-Telco-Customer-Churn.csv'
     data = pd.read_csv(path)
     return data
 def process_senior_citizen(df):
