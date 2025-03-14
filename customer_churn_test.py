@@ -2,9 +2,9 @@ from customer_churn_training import *
 import shap
 import matplotlib.pyplot as plt
 import plotly.express as px
-from io import BytesIO
-
+import pickle
 import requests
+from io import BytesIO
 
 
 def display_feature_insights(model, X_test, feature_names):
