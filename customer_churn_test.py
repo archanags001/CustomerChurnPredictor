@@ -65,7 +65,7 @@ if __name__ == "__main__":
     data = load_data()
     X_train, X_test, y_train, y_test, feature_names = process_data(data)
     url = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
-    log_reg = joblib.load(BytesIO(requests.get(URI).content))
+    log_reg = joblib.load(BytesIO(requests.get(url).content))
 
     col1, col2 = st.columns([1,2])  # Left, Center, Right
 
