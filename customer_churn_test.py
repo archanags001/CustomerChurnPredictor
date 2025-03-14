@@ -49,9 +49,9 @@ def plot_feature_importance_plotly(model, feature_names):
 MODEL_URL = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
 @st.cache_resource
 def load_model():
-response = requests.get(MODEL_URL, stream=True)  # Stream the content
-response.raise_for_status()  # Raise an error if the request fails
-return pickle.load(BytesIO(response.content))
+    response = requests.get(MODEL_URL, stream=True)  # Stream the content
+    response.raise_for_status()  # Raise an error if the request fails
+    return pickle.load(BytesIO(response.content))
 
 if __name__ == "__main__":
     st.set_page_config(layout='wide')
