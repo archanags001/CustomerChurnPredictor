@@ -11,3 +11,4 @@ The dataset has several important features, such as:
 * **MonthlyCharges**: The amount the customer is billed monthly.
 * **TotalCharges**: The total amount the customer has been billed during their entire time with the company.
 * **Churn**: The target variable indicating whether the customer has churned (True) or not (False).
+ [Streamlit app](https://customerchurnpredictortest.streamlit.app) 
