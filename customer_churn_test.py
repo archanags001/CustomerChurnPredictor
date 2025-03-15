@@ -194,7 +194,7 @@ if __name__ == "__main__":
         # Apply the styling to the original test_data
         styled_df = test_data.style.apply(highlight_churn, axis=1)
 
-        st.markdown("<h3 class='centered-header'> Test Data with Predictions and Probabilities</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 class='centered-header'> New Data with Predictions and Probabilities</h3>", unsafe_allow_html=True)
 
         st.dataframe(styled_df, use_container_width=True)
 
