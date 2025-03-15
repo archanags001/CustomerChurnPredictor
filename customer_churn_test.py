@@ -14,7 +14,7 @@ def display_feature_insights(model, X_test, feature_names):
         X_test_scaled = model.named_steps['scaler'].transform(X_test)
         explainer = shap.Explainer(model.named_steps['classifier'], X_test_scaled, feature_names=feature_names)
         shap_values = explainer(X_test_scaled)
-        shap.summary_plot(shap_values, X_test_scaled, feature_names=feature_names,max_display=12, show=False)
+        shap.summary_plot(shap_values, X_test_scaled, feature_names=feature_names,max_display=13, show=False)
         st.pyplot(plt.gcf())
         plt.clf()
     with col_b:
