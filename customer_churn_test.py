@@ -72,7 +72,7 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test, feature_names = process_data(data)
     # url = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
     log_reg = pickle.load(open('customer_churn_model.pkl', 'rb'))
-    st.write('hi')
+    st.write(type(log_reg))
 
     col1, col2 = st.columns([1,2])  # Left, Center, Right
 
