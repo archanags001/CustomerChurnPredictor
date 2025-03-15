@@ -114,8 +114,8 @@ def evaluate_models(model, X_test, y_test):
     X_test_scaled = model.named_steps['scaler'].transform(X_test)
     y_pred = model.named_steps['classifier'].predict(X_test_scaled)
     y_prob = model.named_steps['classifier'].predict_proba(X_test_scaled)[:, 1]
-    print(classification_report(y_test, y_pred))
-    print(f'AUC-ROC: {roc_auc_score(y_test, y_prob):.4f}')
+    st.write(classification_report(y_test, y_pred))
+    st.write(f'AUC-ROC: {roc_auc_score(y_test, y_prob):.4f}')
 
 
 if __name__ == "__main__":
