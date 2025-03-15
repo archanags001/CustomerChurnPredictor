@@ -46,12 +46,12 @@ def plot_feature_importance_plotly(model, feature_names):
     )
     fig.update_layout(xaxis_tickangle=-45)
     st.plotly_chart(fig)
-MODEL_URL = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
-@st.cache_resource
-def load_model():
-    response = requests.get(MODEL_URL, stream=True)  # Stream the content
-    response.raise_for_status()  # Raise an error if the request fails
-    return pickle.load(BytesIO(response.content))
+# MODEL_URL = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
+# @st.cache_resource
+# def load_model():
+#     response = requests.get(MODEL_URL, stream=True)  # Stream the content
+#     response.raise_for_status()  # Raise an error if the request fails
+#     return pickle.load(BytesIO(response.content))
 
 if __name__ == "__main__":
     st.set_page_config(layout='wide')
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     data = load_data()
     X_train, X_test, y_train, y_test, feature_names = process_data(data)
     # url = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
-    log_reg = load_model()
+    log_reg = pickle.load(open('https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl', 'rb'))
 
     col1, col2 = st.columns([1,2])  # Left, Center, Right
 
