@@ -19,8 +19,6 @@ def display_feature_insights(model, X_test, feature_names):
         plt.clf()
     with col_b:
         st.markdown("<h3 class='centered-header'>Feature for Dependence Plot</h3>", unsafe_allow_html=True)
-        st.write("")
-        st.write("")
         feature_index = st.selectbox("Select Feature for Dependence Plot", feature_names)
         st.write("")
         st.write("")
