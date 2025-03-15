@@ -73,7 +73,6 @@ if __name__ == "__main__":
     # url = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
     # log_reg = pickle.load(open('customer_churn_model.pkl', 'rb'))
     log_reg = joblib.load('customer_churn_model.pkl')
-    st.write(type(log_reg))
 
     col1, col2 = st.columns([1,2])  # Left, Center, Right
 
