@@ -44,12 +44,6 @@ def plot_feature_importance_plotly(model, feature_names):
     )
     fig.update_layout(xaxis_tickangle=-45)
     st.plotly_chart(fig)
-# MODEL_URL = "https://github.com/archanags001/CustomerChurnPredictor/blob/main/customer_churn_model.pkl"
-# @st.cache_resource
-# def load_model():
-#     response = requests.get(MODEL_URL, stream=True)  # Stream the content
-#     response.raise_for_status()  # Raise an error if the request fails
-#     return pickle.load(BytesIO(response.content))
 
 if __name__ == "__main__":
     st.set_page_config(layout='wide')
@@ -162,7 +156,7 @@ if __name__ == "__main__":
                     st.success("Test data updated successfully!")
 
         else:
-            test_data = pd.read_csv('Test_data_no_churn.csv')
+            test_data = pd.read_csv('https://raw.githubusercontent.com/archanags001/CustomerChurnPredictor/refs/heads/main/Test_data_no_churn.csv')
 
             if st.button("Submit Test Data"):
                 st.dataframe(test_data)
